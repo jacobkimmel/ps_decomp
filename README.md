@@ -6,9 +6,9 @@ This repository implements "Periodic plus smooth image decomposition," as [descr
 
 Periodic plus smooth decomposition (PS decomposition) separates an image into its additive "periodic" and "smooth" components. 
 
-This decomposition is defined as splitting a gray image $u$ into periodic $p$ and smooth $s$ components. 
+This decomposition is defined as splitting a gray image `u` into periodic `p` and smooth `s` components. 
 
-We reference the paper for proper formal treatment of the topic, but in colloquial terms the image $p$ contains only information in $u$ that respects periodic assumptions and $s$ is "maximally smooth," such that each pixel in $s$ is equal to the mean of its neighbors.
+We reference the paper for proper formal treatment of the topic, but in colloquial terms the image `p` contains only information in `u` that respects periodic assumptions and `s` is "maximally smooth," such that each pixel in `s` is equal to the mean of its neighbors.
 
 ## What does that mean and why is it useful?
 
