@@ -33,7 +33,7 @@ In `psd.py` you'll find functions to compute the PS decomposition.
 ```bash
 python psd.py
 ```
-will reporduce the figure above.
+will reproduce the figure above.
 
 Happy decomposing!
 
