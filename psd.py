@@ -35,7 +35,8 @@ def v2s(v_hat: np.ndarray) -> np.ndarray:
     '''Computes the maximally smooth component of `u`, `s` from `v`
 
 
-    s[q, r] = v[q, r] / (2*np.cos( (2*np.pi*q)/M ) + 2*np.cos( (2*np.pi*r)/N ) - 4)
+    s[q, r] = v[q, r] / (2*np.cos( (2*np.pi*q)/M )
+        + 2*np.cos( (2*np.pi*r)/N ) - 4)
 
     Parameters
     ----------
@@ -47,7 +48,8 @@ def v2s(v_hat: np.ndarray) -> np.ndarray:
     q = np.arange(M).reshape(M, 1).astype(v_hat.dtype)
     r = np.arange(N).reshape(1, N).astype(v_hat.dtype)
 
-    den = (2*np.cos( np.divide((2*np.pi*q), M) ) + 2*np.cos( np.divide((2*np.pi*r), N) ) - 4)
+    den = (2*np.cos( np.divide((2*np.pi*q), M) ) \
+         + 2*np.cos( np.divide((2*np.pi*r), N) ) - 4)
     s = np.divide(v_hat, den, out=np.zeros_like(v_hat), where=den!=0)
     s[0, 0] = 0
     return s
