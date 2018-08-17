@@ -1,5 +1,6 @@
 '''Periodic & smooth image decomposition'''
 import numpy as np
+import skimage
 
 def u2v(u: np.ndarray) -> np.ndarray:
     '''Converts the image `u` into the image `v`
@@ -73,10 +74,10 @@ if __name__ == '__main__':
     import matplotlib
     matplotlib.rcParams.update({'font.size':30})
     import matplotlib.pyplot as plt
-    import skimage
     from skimage.data import astronaut
 
-    def plot_img(I, title=None, out=None):
+    def plot_img(I: np.ndarray, title: str=None, out: str=None) -> None:
+        '''Plot an image with a nice big figure'''
         plt.figure(None, (10,10));
         plt.imshow(I, cmap='gray');
         if title is not None:
@@ -85,10 +86,10 @@ if __name__ == '__main__':
             plt.savefig(out)
         return
 
-    def viz_fft(f: np.ndarray, out: str):
+    def viz_fft(f: np.ndarray, out: str) -> None:
         shift = np.fft.fftshift(f)
         amp = np.log(np.abs(shift) + 1)
-        phase = np.log(np.angle(shift) + 1)
+        phase = np.angle(shift)
         fig, ax = plt.subplots(1,2,figsize=(16,8))
         ax[0].imshow(amp, cmap='gray')
         ax[0].set_title('Amplitude')
