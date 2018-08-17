@@ -1,4 +1,11 @@
-'''Periodic & smooth image decomposition'''
+'''Periodic & smooth image decomposition
+
+References
+----------
+Periodic Plus Smooth Image Decomposition
+Moisan, L. J Math Imaging Vis (2011) 39: 161. 
+doi.org/10.1007/s10851-010-0227-1
+'''
 import numpy as np
 import skimage
 
@@ -75,29 +82,6 @@ if __name__ == '__main__':
     matplotlib.rcParams.update({'font.size':30})
     import matplotlib.pyplot as plt
     from skimage.data import astronaut
-
-    def plot_img(I: np.ndarray, title: str=None, out: str=None) -> None:
-        '''Plot an image with a nice big figure'''
-        plt.figure(None, (10,10));
-        plt.imshow(I, cmap='gray');
-        if title is not None:
-            plt.title(title)
-        if out is not None:
-            plt.savefig(out)
-        return
-
-    def viz_fft(f: np.ndarray, out: str) -> None:
-        shift = np.fft.fftshift(f)
-        amp = np.log(np.abs(shift) + 1)
-        phase = np.angle(shift)
-        fig, ax = plt.subplots(1,2,figsize=(16,8))
-        ax[0].imshow(amp, cmap='gray')
-        ax[0].set_title('Amplitude')
-        ax[1].imshow(phase, cmap='gray')
-        ax[1].set_title('Phase')
-        plt.tight_layout()
-        plt.savefig(out)
-        return
 
     Irgb = astronaut()
     Ig = skimage.color.rgb2gray(Irgb)

@@ -2,6 +2,10 @@
 
 This repository implements "Periodic plus smooth image decomposition," as [described by Lionel Moisan.](http://www.math-info.univ-paris5.fr/~moisan/papers/2009-11r.pdf)
 
+*Periodic Plus Smooth Image Decomposition*  
+Moisan, L. J Math Imaging Vis (2011) 39: 161.  
+doi.org/10.1007/s10851-010-0227-1  
+
 ## What is periodic plus smooth decomposition?
 
 Periodic plus smooth decomposition (PS decomposition) separates an image into its additive "periodic" and "smooth" components. 
@@ -24,7 +28,12 @@ By decomposing an image into a component that respects this periodicity assumpti
 
 ## What's in this repo?
 
-In `psd.py` you'll find functions to compute the PS decomposition shown above. 
+In `psd.py` you'll find functions to compute the PS decomposition. 
+
+```bash
+python psd.py
+```
+will reporduce the figure above.
 
 Happy decomposing!
 
