@@ -16,7 +16,7 @@ We reference the paper for proper formal treatment of the topic, but in colloqui
 
 ## What does that mean and why is it useful?
 
-The discrete Fourier transform (DFT) is a common and useful analytical technique for images. Many operations can be computed more cheaply or are more intuitive in the Fourier domain. Applications of DFT range from image interpolation to image registration.
+The discrete Fourier transform (DFT) is a common and useful analytical technique for images. Many operations can be computed more cheaply or are more intuitive in the Fourier domain. Applications of the DFT range from image interpolation to image registration.
 
 The DFT assumes that the signal data it operates on is periodic. However, this is obviously not true for the vast majority of images, which will experience artifacts at the boundaries due to their non-periodic nature.
 
