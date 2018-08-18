@@ -23,7 +23,7 @@ def periodic_smooth_decomp(I: np.ndarray) -> (np.ndarray, np.ndarray):
     S : np.ndarray
         [M, N] image, float. smooth portion.
     '''
-    u = skimage.img_as_float(I)
+    u = I.astype(np.float64)
     v = u2v(u)
     v_fft = np.fft.fftn(v)
     s = v2s(v_fft)
@@ -96,7 +96,10 @@ if __name__ == '__main__':
     labs = ['u', 'p', 's']
     for i, j in enumerate([Ig, p, s]):
         jf = np.fft.fftn(j)
-        ax[0, i].imshow(j, cmap='gray', vmin=0., vmax=1.)
+        if i == 2:
+            ax[0, i].imshow(j, cmap='gray')
+        else:
+            ax[0, i].imshow(j, cmap='gray', vmin=0., vmax=1.)
         ax[0, i].set_title(labs[i])
         ax[1, i].imshow(np.log(np.abs(np.fft.fftshift(jf)) + 1), cmap='gray')
         ax[2, i].imshow(np.angle(np.fft.fftshift(jf)), cmap='gray')
