@@ -45,13 +45,13 @@ def u2v(u: np.ndarray) -> np.ndarray:
     v : np.ndarray
         [M, N] image, zeroed expect for the outermost rows and cols
     '''
-    v = np.zeros(u.shape, dtype=u.dtype)
+    v = np.zeros(u.shape, dtype=np.float64)
 
-    v[0, :] = u[-1, :] - u[0,  :]
-    v[-1,:] = u[0,  :] - u[-1, :]
+    v[0, :] = np.subtract(u[-1, :], u[0,  :], dtype=np.float64)
+    v[-1,:] = np.subtract(u[0,  :], u[-1, :], dtype=np.float64)
 
-    v[:,  0] += u[:, -1] - u[:,  0]
-    v[:, -1] += u[:,  0] - u[:, -1]
+    v[:,  0] += np.subtract(u[:, -1], u[:,  0], dtype=np.float64)
+    v[:, -1] += np.subtract(u[:,  0], u[:, -1], dtype=np.float64)
     return v
 
 def v2s(v_hat: np.ndarray) -> np.ndarray:
