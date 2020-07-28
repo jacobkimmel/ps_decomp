@@ -20,9 +20,9 @@ The discrete Fourier transform (DFT) is a common and useful analytical technique
 
 The DFT assumes that the signal data it operates on is periodic. However, this is obviously not true for the vast majority of images, which will experience artifacts at the boundaries due to their non-periodic nature.
 
-One of the most common of these artifacts is a large "cross" in the Fourier domain, demonstrated in the first row below.
+One of the most common of these artifacts is a large "cross" in the Fourier domain, demonstrated in the first column below.
 
-By decomposing an image into a component that respects this periodicity assumption, this artifact can be removed, as shown in the second row.
+By decomposing an image into a component that respects this periodicity assumption, this artifact can be removed, as shown in the second column.
 
 ![Astronaut PS decomp](astronaut_psd.png)
 
